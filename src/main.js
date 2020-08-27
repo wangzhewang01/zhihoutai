@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import qs from 'qs'
 
 import elementui from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.prototype.$axios = axios
+Vue.prototype.$qs = qs
 Vue.use(elementui)
 Vue.config.productionTip = false
 

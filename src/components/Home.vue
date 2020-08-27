@@ -1,18 +1,15 @@
 <template>
-  <div>
+  <div style="margin-top: -60px">
     <el-container>
       <el-header>
         <el-dropdown trigger="click" @command="hanleCommand">
                     <span class="el-dropdown-link">
                         <i class="el-icon-user-solid"></i>
-                         <!--<p hidden>{{user=$route.params.user}}</p>-->
                           {{emp.name}}
-                      <!--欢迎{{user.name}}-->
-
                         <i class="el-icon-arrow-down el-icon--right"></i>
                     </span>
           <el-dropdown-menu>
-            <el-dropdown-item command="Stu">个人信息</el-dropdown-item>
+            <el-dropdown-item command="Usercenter">个人中心</el-dropdown-item>
             <el-dropdown-item command="Upd">修改密码</el-dropdown-item>
             <el-dropdown-item command="Tui">退出</el-dropdown-item>
           </el-dropdown-menu>
@@ -22,10 +19,16 @@
         <el-aside>
           <!-- router:启用路由规则 -->
           <el-menu :router="true">
-            <el-menu-item index="1" :route="{name:'Emp'}">
-              <i class="el-icon-ship"></i>
-              <span>员工管理</span>
-            </el-menu-item>
+            <el-submenu index="1" >
+              <template slot="title">
+                <i class="el-icon-light-rain"></i>
+                <span>员工管理</span>
+              </template>
+              <el-menu-item index="1-1" :route="{name:'Emp'}">
+                <i class="el-icon-apple"></i>
+                <span>员工</span>
+              </el-menu-item>
+            </el-submenu>
 
             <el-submenu index="2">
               <template slot="title">
@@ -70,7 +73,15 @@
 <script>
   export default {
     name: 'Home',
-    data(){ return {emp: {name:"张三"}}}
+    data(){ return {emp: {name:"张三"}}},
+    methods: {
+      hanleCommand: function (command) {
+        // 访问路径：使用path必须写全路径，使用name直接写name值
+        this.$router.push({name: command})
+        // this.$router.push({path:'/home/personal'});
+        // this.$router.push('personal');
+      }
+    }
   }
 </script>
 <style scoped>
