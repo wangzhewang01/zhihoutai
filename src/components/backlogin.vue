@@ -65,7 +65,7 @@ export default {
         // valid返回true表示校验通过，false校验失败
         if (valid) {
           // 登录/* ${this.user.uname}/${this.user.pwd   , {name: this.user.uname, pwd: this.user.pwd}*/
-          this.$axios.post('http://localhost:8088/springboot/backlogin',this.$qs.stringify({"tname":this.user.tname,"tpwd":this.user.tpwd})
+          this.$axios.post('http://localhost:8088/springboot/back/backlogin',this.$qs.stringify({"tname":this.user.tname,"tpwd":this.user.tpwd})
           ).then(
             response => {
               console.log(response.data)
