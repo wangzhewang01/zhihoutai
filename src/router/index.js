@@ -7,6 +7,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Login',
+      component: () => import('../components/backlogin')
+    },
+    {
+      path: '/home',
       name: 'Home',
       component: () => import('../components/Home'),
       children: [{
@@ -18,15 +23,7 @@ export default new Router({
           path: 'wenti',
           name: 'Wenti',
           component: () => import('../components/Wenti'),
-        }
-      ]
-      name: 'login',
-      component: () => import('../components/backlogin')
-    },{
-      path:'/home',
-      name:'Home',
-      component:()=>import('../components/Home'),
-      children: [
+        },
         {
           path: '/emp',
           name: 'Emp',
@@ -37,6 +34,7 @@ export default new Router({
           component: () => import('../components/usercente')
         }
       ]
+
     },
     {
       path: '/*',
