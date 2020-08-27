@@ -7,6 +7,19 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Home',
+      component: () => import('../components/Home'),
+      children: [{
+        path: 'wenzhang',
+        name: 'Wenzhang',
+        component: () => import('../components/Wenzhang')
+      },
+        {
+          path: 'wenti',
+          name: 'Wenti',
+          component: () => import('../components/Wenti'),
+        }
+      ]
       name: 'login',
       component: () => import('../components/backlogin')
     },{
