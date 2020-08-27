@@ -70,7 +70,12 @@
 <script>
   export default {
     name: 'Home',
-    data(){ return {emp: {name:"张三"}}}
+    data(){ return {emp: {name:"张三"}}},
+    methods:{
+      hanleCommand:function(command){
+        this.$router.push({name:command,params:{user:this.user}});
+      }
+    }
   }
 </script>
 <style scoped>
