@@ -22,10 +22,25 @@
         <el-aside>
           <!-- router:启用路由规则 -->
           <el-menu :router="true">
-            <el-menu-item index="1" :route="{name:'Emp'}">
-              <i class="el-icon-ship"></i>
-              <span>员工管理</span>
-            </el-menu-item>
+            <el-submenu index="2">
+              <template slot="title">
+                <i class="el-icon-light-rain"></i>
+                <span>员工管理</span>
+              </template>
+              <el-menu-item index="2-1" :route="{name:'Emp'}">
+                <i class="el-icon-apple"></i>
+                <span>员工管理</span>
+              </el-menu-item>
+              <el-menu-item index="2-2"  :route="{name:'Account'}">
+                <i class="el-icon-brush"></i>
+                <span>账号管理</span>
+              </el-menu-item>
+            </el-submenu>
+
+
+
+
+
 
             <el-submenu index="2">
               <template slot="title">

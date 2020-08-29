@@ -32,6 +32,11 @@ export default new Router({
           path: '/usercenter',
           name: 'Usercenter',
           component: () => import('../components/usercente')
+        },
+        {
+          path: '/account',
+          name: 'Account',
+          component: () => import('../components/Account')
         }
       ]
 
